@@ -1,0 +1,18 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+
+    <Dialog >
+        <f:SimpleForm >
+            <Label text="ProductId"></Label>
+            <Text text="{productDataModel>ProductId}" />
+            <Label text="Name"></Label>
+            <Text text="{productDataModel>Name}"></Text>
+            <Label text="SupplierName"></Label>
+            <Text text="{productDataModel>SupplierName}"></Text>
+        </f:SimpleForm>
+    </Dialog>
+
+
+</core:FragmentDefinition>
