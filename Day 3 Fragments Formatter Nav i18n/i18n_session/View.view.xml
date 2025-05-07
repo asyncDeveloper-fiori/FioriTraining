@@ -1,0 +1,47 @@
+<mvc:View controllerName="tests.controller.View1"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<Page id="page" title="{i18n>title}">
+
+		<Input value="{productDataModel>/ProductCollection/0/ProductId}" />
+		<Input id="inputField" />
+
+		<Table items="{productDataModel>/ProductCollection}" >
+			<columns>
+				<Column >
+					<header>
+						<Label text="{i18n>ProductId}" />
+					</header>
+				</Column>
+				<Column >
+					<header>
+						<Label text="{i18n>Name}" />
+					</header>
+				</Column>
+				<Column >
+					<header>
+						<Label text="{i18n>Price}" />
+					</header>
+				</Column>
+
+				<Column >
+					<header>
+						<Label text="{i18n>Quantity}" />
+					</header>
+				</Column>
+
+			</columns>
+			<items>
+				<ColumnListItem type="Active" press="onRowClick">
+					<cells>
+						<Text text="{productDataModel>ProductId}" />
+						<Text text="{productDataModel>Name}" />
+						<Text text="{productDataModel>Price}" visible="{=${productDataModel>Quantity} > 10 ? true : false}"/>
+						<Text text="{productDataModel>Quantity}" />
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+
+	</Page>
+</mvc:View>
